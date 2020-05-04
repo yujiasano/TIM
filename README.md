@@ -42,7 +42,7 @@ Things you may want to cover:
 |Column|Type|Options|
 |------|----|-------|
 |content|text||
-|image|text||
+|image|string||
 |user_id|integer| false, foregin_key: true|
 
 ### Association
