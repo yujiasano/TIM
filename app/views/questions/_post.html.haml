@@ -1,0 +1,31 @@
+%header
+  .header-logo
+    .header-logo__title
+      TIM
+    %p
+      − Time Is Money - 
+  %ul.header-list 
+    -if current_user
+      %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-list__logout"
+    -else
+      %li= link_to "ログイン", new_user_session_path, class: "header-list__login"
+
+      %li= link_to "新規登録", new_user_registration_path, class: "header-list__new"
+    
+    
+      
+  
+
+.side
+   
+  .side__top
+    質問一覧
+  
+  .side__title
+    カテゴリー
+
+  .side__list
+    プログラミング
+  
+  .side__list
+    筋トレ

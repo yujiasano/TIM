@@ -1,3 +1,153 @@
 // Place all the styles related to the questions controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+// ここからヘッダー
+header {
+  background-color: #333333;
+  height: 80px;
+  width: 100vw;
+  display: flex;
+  justify-content: space-between;
+  // align-items: center;
+  .header-logo {
+    height: 80px;
+    display: flex;
+    align-items: center;
+    margin-left: 50px;
+    &__title{
+      color: gold;
+      font-size: 40px;
+      // line-height: 80px;
+    }
+    p {
+      color: white;
+      font-size: 12px;
+    }
+  }
+  .header-list {
+    line-height: 80px;
+    padding-top: 10px;
+    margin-right: 100px;
+    font-size: 20px;
+    display: flex;
+
+    a {
+      // background-color: green;
+      text-decoration: none;
+      color: white;
+      margin-left: 30px;
+    }
+    
+    // &__login {
+    //   text-decoration: none;
+    //   color: white;
+    // }
+    // &__new {
+    //   text-decoration: none;
+    //   color: white;
+    //   margin-left: 30px;
+    // }
+  }
+}
+
+// ここからサイドバー
+.side {
+  height: calc(100vh - 80px);
+  width: 250px;
+  background-color: darkgray;
+  float: left;
+    
+  &__top {
+    height: 50px;
+    border-radius: 20px;
+    margin: 5%;
+    background-color: #eeeeee;
+    padding-left: 20px;
+    line-height: 50px;
+    font-size: 20px;
+  }
+
+  &__title {
+    height: 20px;
+    margin: 5%;
+    // background-color: #eeeeee;
+    // border-radius: 10px;
+    // padding-left: 20px;
+    // line-height: 80px;
+    font-size: 20px;
+  }
+
+  &__list {
+    height: 50px;
+    border-radius: 20px;
+    margin: 5%;
+    background-color: #eeeeee;
+    padding-left: 20px;
+    line-height: 50px;
+    font-size: 20px;
+  }
+  
+
+}
+
+
+// ここからメインコンテンツ
+.main-contents {
+  height: calc(100vh - 80px);
+  width: calc(100vw - 250px);
+  background-image: url("/images/main-image.jpg");
+  background-size: cover;
+  background-color:rgba(255,255,255,0.4);
+  background-blend-mode:lighten;
+  float: right;
+
+  &__content {
+    width: 800px;
+    height: 120px;
+    background-color: rgba(255,255,255,0.4); 
+    margin: 0 auto; 
+    margin-top: 30px;
+    padding: 10px;
+    box-sizing: border-box;
+    // white-space: nowrap;  
+    // overflow: hidden;  
+    // text-overflow: ellipsis;  
+
+    &--info {
+      display: flex;
+      &--title {
+        font-weight: bold;
+        // height: 30px;
+        white-space: nowrap;  
+        overflow: hidden;  
+        text-overflow: ellipsis;
+      }
+
+      &--name {
+        margin-left: 20px;
+        margin-right: 20px;
+      }
+    }
+
+    &--main{
+      // height: 100%;
+      // box-sizing: border-box;
+      &--text {
+      // height: 60px;
+      padding: 10px;
+      white-space: nowrap; 
+      overflow: hidden;  
+      text-overflow: ellipsis;
+
+      }
+
+      &--time {
+        // padding: 10px;
+        font-size: 15px;
+        float: right;
+      }
+    }
+
+  }
+}
