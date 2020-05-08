@@ -5,8 +5,9 @@
     %p
       − Time Is Money - 
   %ul.header-list 
-    -if current_user
+    -if user_signed_in?
       %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-list__logout"
+      %li= link_to "質問する", new_question_path, class: "header-list__logout"
     -else
       %li= link_to "ログイン", new_user_session_path, class: "header-list__login"
 
@@ -19,8 +20,7 @@
 .side
    
   .side__top
-    質問一覧
-  
+    = link_to "質問一覧", root_path
   .side__title
     カテゴリー
 

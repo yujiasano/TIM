@@ -1,0 +1,34 @@
+= render partial: 'post'
+
+.main-contents
+    
+  .main-contents__show
+    .main-contents__show--info 
+      .main-contents__show--info--title
+        = @question.title
+        -#  link_to question.title, question_path(@questions.ids)
+      .main-contents__show--info--name
+        = @question.user.name
+    .main-contents__show--main.clearfix    
+      .main-contents__show--main--text
+        = @question.contents
+      .main-contents__show--main--image
+        = image_tag @question.image     
+      .main-contents__show--main--time
+        = @question.created_at
+
+  .main-contents__answer
+
+    = render partial: 'answers/answer'
+
+  -# .answers
+  -#   = if current_user
+  -#     .input-box
+  -#       %input{type: "text", class}
+    -#   = form_with(model: [@tweet, @comment], local: true) do |form| %>
+    -#     <%= form.text_area :text, placeholder: "コメントする", rows: "2" %>
+    -#     <%= form.submit "SEND" %>
+    -#   <% end %>
+    -# <% else %>
+    -#   <strong><p>※※※ コメントの投稿には新規登録/ログインが必要です ※※※</p></strong>
+    -# <% end %>
