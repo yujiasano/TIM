@@ -1,0 +1,16 @@
+= render partial: 'post'
+
+.main-contents
+  
+  .main-contents__question
+    = form_for @question do |f|
+      .main-contents__question--top 
+        タイトル  
+      = f.text_field :title, class: "main-contents__question--title", placeholder: '　タイトルを入力してください'
+      .main-contents__question--main 
+        本文
+      = f.text_area :contents, class: "main-contents__question--text", placeholder: '　質問を入力してください'
+      = f.label :image, class: "main-contents__question--image" do
+        = icon("fas", "image")
+        = f.file_field :image, class: "main-contents__question--image--file"
+      = f.submit "投稿", class: "main-contents__question--btn"

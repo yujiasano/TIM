@@ -33,37 +33,22 @@
 
 
 .main-contents
+    
+  - @questions.each do |question|
+    .main-contents__content
+      .main-contents__content--info 
+        .main-contents__content--info--title
+          -# = question.title
+          = link_to question.title, question_path(question.id)
+        .main-contents__content--info--name
+          = question.user.name
+      .main-contents__content--main.clearfix    
+        .main-contents__content--main--text
+          = question.contents 
+        .main-contents__content--main--image
+          -if question.image?
+            ※画像が投稿されています
+        .main-contents__content--main--time
+          = question.created_at
   
-  .main-contents__content
-
-    .main-contents__content--info
-  
-      .main-contents__content--info--title
-        Rubyについて
-      .main-contents__content--info--name
-        yuji
-    .main-contents__content--main
-      
-      .main-contents__content--main--text
-        Rubyの配列について教えて下さい。aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-        aaa
-      
-      .main-contents__content--main--time
-        2020.05.04 23:39
-
-  .main-contents__content
-
-    .main-contents__content--info
-  
-      .main-contents__content--info--title
-        Rubyについて
-      .main-contents__content--info--name
-        yuji
-    .main-contents__content--main
-      
-      .main-contents__content--main--text
-        Rubyの配列について教えて下さい。aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaabbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb
-        aaa
-      
-      .main-contents__content--main--time
-        2020.05.04 23:39        
+    
