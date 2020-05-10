@@ -9,6 +9,8 @@
         -#  link_to question.title, question_path(@questions.ids)
       .main-contents__show--info--name
         = @question.user.name
+      -# .main-contents__show--info--like
+      -#   = button_to "いいね", question_answers_path(@question.id)
     .main-contents__show--main.clearfix    
       .main-contents__show--main--text
         = @question.contents

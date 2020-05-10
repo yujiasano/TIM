@@ -11,8 +11,15 @@ class AnswersController < ApplicationController
   def create
     # binding.pry
     @answer = Answer.create(answer_params)
-    # redirect_to question_path(question_id)
+    redirect_to question_path(@answer.question.id)
+    @like = Like.new
   end
+
+  def destroy
+    answer = Answer.find(params[:id])
+    answer.destroy
+  end
+
 
   private
   def answer_params
