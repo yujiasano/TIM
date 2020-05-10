@@ -8,4 +8,7 @@ class User < ApplicationRecord
   has_many :likes
   has_many :answers
   has_many :card
+  def already_liked?(answer)
+    self.likes.exists?(answer_id: answer.id)
+  end
 end

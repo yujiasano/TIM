@@ -18,6 +18,7 @@ class QuestionsController < ApplicationController
     @question = Question.find(params[:id])
     @answer = Answer.new
     @answers = @question.answers.includes(:user)
+    @like = Like.new
   end
 
  private
