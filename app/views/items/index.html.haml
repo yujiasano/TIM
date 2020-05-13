@@ -1,0 +1,6 @@
+=render partial: "questions/post"
+.main-contents
+
+  -@items.each do |item|
+    .main-contents__price
+      =link_to item.name, item_purchase_index_path(item.id)

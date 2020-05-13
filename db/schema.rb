@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20200509112218) do
+ActiveRecord::Schema.define(version: 20200511124937) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -28,6 +28,15 @@ ActiveRecord::Schema.define(version: 20200509112218) do
     t.index ["user_id"], name: "index_answers_on_user_id", using: :btree
   end
 
+  create_table "cards", force: :cascade do |t|
+    t.integer  "user_id",     null: false
+    t.string   "customer_id", null: false
+    t.string   "card_id",     null: false
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["user_id"], name: "index_cards_on_user_id", using: :btree
+  end
+
   create_table "installs", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
     t.string   "encrypted_password",     default: "", null: false
@@ -38,6 +47,13 @@ ActiveRecord::Schema.define(version: 20200509112218) do
     t.datetime "updated_at",                          null: false
     t.index ["email"], name: "index_installs_on_email", unique: true, using: :btree
     t.index ["reset_password_token"], name: "index_installs_on_reset_password_token", unique: true, using: :btree
+  end
+
+  create_table "items", force: :cascade do |t|
+    t.string   "name"
+    t.integer  "price"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "likes", force: :cascade do |t|
@@ -75,6 +91,7 @@ ActiveRecord::Schema.define(version: 20200509112218) do
   add_foreign_key "answers", "likes"
   add_foreign_key "answers", "questions"
   add_foreign_key "answers", "users"
+  add_foreign_key "cards", "users"
   add_foreign_key "likes", "answers"
   add_foreign_key "likes", "users"
   add_foreign_key "questions", "users"

@@ -7,7 +7,7 @@ class User < ApplicationRecord
   has_many :questions
   has_many :likes
   has_many :answers
-  has_many :card
+  has_one :credit_card, dependent: :destroy
   def already_liked?(answer)
     self.likes.exists?(answer_id: answer.id)
   end
