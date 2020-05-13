@@ -20,6 +20,8 @@ class AnswersController < ApplicationController
     answer.destroy
   end
 
+  
+
 
   private
   def answer_params

@@ -6,13 +6,22 @@
       − Time Is Money - 
   %ul.header-list 
     -if user_signed_in?
-      %li= link_to current_user.name, "#", class: "header-list__logout"
-      %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-list__logout"
-      %li= link_to "質問する", new_question_path, class: "header-list__logout"
+      %li= link_to current_user.name, "#", class: "header-list__li"
+      %li= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "header-list__li"
+      %li= link_to "質問する", items_path, class: "header-list__li"
+      -# %ul.header-list__drop
+      -#   質問する
+      -#   -# %li= link_to Item.find(1).name , items_path,class:"header-list__drop--list"
+      -#   -# -@items.each do |item|
+      -#   -#   =link_to item.name, "#"
+      -#   -# %li= render partial: "items/index" 
+      -#   %li= link_to "1000円の質問をする", items_path,class:"header-list__drop--list"
+      -#   %li= link_to "1500円の質問をする", "#",class:"header-list__drop--list"
+      
     -else
-      %li= link_to "ログイン", new_user_session_path, class: "header-list__login"
+      %li= link_to "ログイン", new_user_session_path, class: "header-list__li"
 
-      %li= link_to "新規登録", new_user_registration_path, class: "header-list__new"
+      %li= link_to "新規登録", new_user_registration_path, class: "header-list__li"
     
     
       

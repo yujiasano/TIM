@@ -9,6 +9,8 @@ header {
   width: 100vw;
   display: flex;
   justify-content: space-between;
+  position: fixed;
+  z-index: 1;
   // align-items: center;
   .header-logo {
     height: 80px;
@@ -28,16 +30,45 @@ header {
   .header-list {
     line-height: 80px;
     padding-top: 10px;
-    margin-right: 100px;
+    margin-right: 150px;
     font-size: 20px;
     display: flex;
+    
+    // position: fixed;
+    // z-index: 1;
 
-    a {
+    &__li {
       // background-color: green;
       text-decoration: none;
       color: white;
       margin-left: 30px;
     }
+
+    // &__drop {
+    //   text-decoration: none;
+    //   color: white;
+    //   margin-left: 30px;
+      
+    //   li {
+    //       // height: 30px;
+    //       // background-color: yellow;
+    //       display: none;
+    //       padding: 5px;
+    //       box-sizing: border-box;
+    //       // child{ top:27px; }
+    //     a {
+    //       // display: none;
+    //       display: block;
+    //       text-decoration: none;
+    //       border-radius: 10px;
+    //       background-color: white;
+    //       // height: 20px;
+    //       font-size: 15px;
+
+    //     }
+    //   }
+    // }
+
     
     // &__login {
     //   text-decoration: none;
@@ -57,6 +88,7 @@ header {
   width: 250px;
   background-color: darkgray;
   float: left;
+  margin-top: 80px;
   
   &__top {
     height: 50px;
@@ -106,6 +138,7 @@ header {
   background-color:rgba(255,255,255,0.4);
   background-blend-mode:lighten;
   float: right;
+  margin-top: 80px;
   &__text {
     font-size: 20px;
     width: 500px;

@@ -20,6 +20,7 @@ class QuestionsController < ApplicationController
     @answers = @question.answers.includes(:user)
     @like = Like.new
   end
+  
 
  private
  def question_params
