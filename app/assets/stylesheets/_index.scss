@@ -1,3 +1,11 @@
+// 質問の値段を選ぶビュー（itemsのindex.html.haml）
+// と支払い確認画面のビュー
+.choise-title {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 30px;
+  font-family: Georgia, serif;
+}
 .main-contents__price {
   // background-color: wheat;
   // // width: 300px;
@@ -5,7 +13,8 @@
   // margin: 0 auto;
   // margin-top: 40px;
   a{
-    background-color: rgb(8, 112, 169);
+    background-color: rgba(123, 119, 11, 0.755);
+    border: inset;
     border-radius: 10px;
     text-decoration: none;
     color: white;
@@ -17,6 +26,58 @@
     width: 300px;
     margin-top: 40px;
     height: 50px;
-    box-shadow: 10px 10px 15px -10px white;
+    box-shadow: 10px 10px 15px -10px rgb(31, 4, 4);
+    font-family: Georgia, serif;
+  }
+  
+}
+
+// 支払い確認画面のビュー
+.main-contents__conf {
+  background-color: rgba(220, 212, 196, 0.488);
+  width: 400px;
+  height: 300px;
+  margin: 0 auto;
+  margin-top: 50px;
+  text-align: center;
+  h2 {
+    font-size: 30px;
+    margin-top: 50px;
+    color: white;
+    background-color: rgba(123, 119, 11, 0.755);
+    border: inset;
+  }
+  p {
+    display: block;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  h3 {
+    font-size: 20px;
+  }
+
+  button {
+    width: 100px;
+    height: 50px;
+    font-size: 15px;
+    font-family: Georgia, serif;
+    position: relative;
+    display: inline-block;
+    margin-top: 30px;
+    padding: 0.25em 0.5em;
+    text-decoration: none;
+    color: #FFF;
+    background: rgba(123, 119, 11, 0.755);/*色*/
+    border-radius: 4px;/*角の丸み*/
+    box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
+    font-weight: bold;
+    border: solid 2px #615418;/*線色*/
+
+  }
+  button:active {
+    /*押したとき*/
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
+
   }
 }

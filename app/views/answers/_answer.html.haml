@@ -17,9 +17,9 @@
           =link_to icon("fas", "crown"), question_answer_like_path(@question.id, answer.id, params[:id]), method:"DELETE"
           -# = icon("fas", "crown")
 
-      -elsif current_user == @question.user  
+      -elsif current_user == @question.user 
         .main-contents__show--info--like
-          = button_to "いいね", question_answer_likes_path(@question.id,answer.id), remote: true
+          = button_to "いいね", question_answer_likes_path(@question.id,answer.id), class: "like-btn"
         
           
       .main-contents__show--main.clearfix    

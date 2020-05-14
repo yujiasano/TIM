@@ -1,7 +1,7 @@
 .main-contents {
   height: calc(100vh - 80px);
   width: calc(100vw - 250px);
-  background-image: url("/images/main-image.jpg");
+  background-image: url("/images/watch.jpg");
   background-size: cover;
   background-color:rgba(255,255,255,0.4);
   background-blend-mode:lighten;
@@ -10,7 +10,7 @@
   &__show {
     width: 800px;
     // height: 120px;
-    background-color: rgba(255,255,255,0.4); 
+    background-color: rgba(255,255,255,0.6); 
     margin: 0 auto; 
     margin-top: 30px;
     padding: 10px;
@@ -72,6 +72,16 @@
       }
     }
 
+  }
+  &__text {
+    font-size: 20px;
+    width: 500px;
+    font-weight: bold;
+    font-family: Georgia, serif;
+    display: block;
+    margin: 0 auto;
+    margin-top: 20px;
+    color: rgb(3, 3, 3);
   }
 }
 

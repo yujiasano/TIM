@@ -1,24 +1,29 @@
 = render partial: "questions/post"
 
-%h2 質門の購入が完了しました！
+-# cssは_new.scss
 
-%p= "購入した質門：#{@done}円の質門"
-
--# =button_to "質門", "/questions/new"
 .main-contents
-  
+  :javascript
+    window.onbeforeunload = function(e) {
+    e.returnValue = "ページを離れようとしています。よろしいですか？";
+    };
+
+    
+  .main-contents__start
+    = "#{@done}円の質問の購入が完了しました!" 
+    %p= "~ 質問をどうぞ ~" 
   .main-contents__question
-    = form_for questions_path do |f|
+    = form_for :post, url: '/questions' do |f|
       .main-contents__question--top 
         タイトル  
       = f.text_field :title, class: "main-contents__question--title", placeholder: '　タイトルを入力してください'
       .main-contents__question--main 
         本文
-      -# = f.text_field ,placeholder: readonly: "購入した質門：#{@done}円の質門"
+      = f.text_field :price, class: "main-contents__question--none",value: "#{@done}円の質問"
       = f.text_area :contents, class: "main-contents__question--text", placeholder: '　質問を入力してください'
       = f.label :image, class: "main-contents__question--image" do
         = icon("fas", "image")
         = f.file_field :image, class: "main-contents__question--image--file"
-      = f.submit "投稿", class: "main-contents__question--btn"
+      = f.submit "投稿する", onclick:"window.onbeforeunload = null;" , class: "main-contents__question--btn"
       
-    -# = render partial: 'cards/new/new'
+    
