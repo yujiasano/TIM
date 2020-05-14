@@ -1,6 +1,7 @@
 =render partial: "questions/post"
 .main-contents
-
+  .choise-title
+    質問の値段をえらんでください。
   -@items.each do |item|
     .main-contents__price
       =link_to item.name, item_purchase_index_path(item.id)

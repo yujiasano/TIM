@@ -1,0 +1,1 @@
+// $(".like-btn").html("#{escape_javascript(render partial: 'like', locals: { likes: @likes, like: @like})}")

@@ -11,6 +11,7 @@ class QuestionsController < ApplicationController
   def create
     # binding.pry
     @question = Question.create(question_params)
+    @question.save
     redirect_to root_path
   end
 
@@ -24,7 +25,9 @@ class QuestionsController < ApplicationController
 
  private
  def question_params
-  params.require(:question).permit(:image, :contents, :title).merge(user_id: current_user.id)
+  # binding.pry
+  # params[:question].permit(:image, :contents, :title, :price).merge(user_id: current_user.id)
+  params.require(:post).permit(:image, :contents, :title, :price).merge(user_id: current_user.id)
  end
 
 end
