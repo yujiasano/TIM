@@ -8,11 +8,11 @@ Rails.application.routes.draw do
   root "questions#index"
 
   resources :questions, only: [:index, :show, :new, :create, :destroy] do
-    resources :answers, only: [:create, :destroy] do
-      resources :likes, only: [:create, :destroy]
-    end
     collection do
       get 'search'
+    end
+    resources :answers, only: [:create, :destroy] do
+      resources :likes, only: [:create, :destroy]
     end
   end 
   resources :cards, only: [:new, :create] do

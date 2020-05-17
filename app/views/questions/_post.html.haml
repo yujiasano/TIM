@@ -38,3 +38,7 @@
   
   .side__list
     筋トレ
+  
+  = form_tag( "/questions/search", method: :get , class: "search-form") do
+    = text_field_tag :keyword, params[:keyword],{placeholder: "質問を検索する",class:"search-form__text"}
+    = submit_tag "検索",class:"search-form__submit"

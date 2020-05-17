@@ -11,15 +11,17 @@
       .main-contents__show--info--name
         = answer.user.name
         -# = render partial: 'likes/like', locals: { answer: @answer, answers: @answers}
+      .main-contents__show--info--fav
+        =render partial: "likes/like", locals: { answer: answer}
+      -# .main-contents__show--info--fav
+      -#   -if @question.user.already_liked?(answer)
+      -#     .liked
+      -#       =link_to icon("fas", "crown"), question_answer_like_path(@question.id, answer.id, params[:id]), method:"DELETE"
+      -#       -# = icon("fas", "crown")
 
-      -if @question.user.already_liked?(answer)
-        .main-contents__show--info--liked
-          =link_to icon("fas", "crown"), question_answer_like_path(@question.id, answer.id, params[:id]), method:"DELETE"
-          -# = icon("fas", "crown")
-
-      -elsif current_user == @question.user 
-        .main-contents__show--info--like
-          = button_to "いいね", question_answer_likes_path(@question.id,answer.id), class: "like-btn"
+      -#   -elsif current_user == @question.user 
+      -#     .like
+      -#       = link_to icon("fas", "crown"), question_answer_likes_path(@question.id,answer.id), method:"POST", class: "like-btn"
         
           
       .main-contents__show--main.clearfix    

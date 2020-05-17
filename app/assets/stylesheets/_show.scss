@@ -33,21 +33,32 @@
         margin-left: 20px;
         margin-right: 20px;
       }
-      &--liked {
-        // background-color: coral;
-        float: right;
-        // width: 100px;
-        // height: 100px;
-        // font-size: 50px;
-        text-align: center;
-        // color: yellow;
-        i {
-          font-size: 60px;
-          color: yellow;
+      &--fav {
+
+        .liked {
+          // background-color: coral;
+          float: right;
+          // width: 100px;
+          // height: 100px;
+          // font-size: 50px;
+          text-align: center;
+          // color: yellow;
+          i {
+            font-size: 60px;
+            color: yellow;
+          }
         }
-      }
-      &--like {
-        float: right;
+        .like {
+          float: right;
+          a {
+  
+            i {
+              text-decoration: none;
+              color: rgb(133, 131, 131);
+              font-size: 30px;
+            }
+          }
+        }
       }
     }
 
