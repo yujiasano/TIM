@@ -1,20 +1,11 @@
-- if user_signed_in? && @question.user
 
-  - if @question.user.already_liked?(answer)
-    .item-button-container__left__dislike
-      =link_to question_answer_like_path(@question.id, answers.ids, params[:id]), method: "DELETE", remote: true do
-        %i.fas.fa-heart
-        %span いいねしたよ！
-        
-  - else
-    .item-button-container__left__like
-      =link_to question_answer_likes_path(@question.id, answers.ids), method: "POST", remote: true do
-        %i.fas.fa-heart
-        %span いいね！
-        %span
-          -# = product.likes_count
--else
-  .item-button-container__left__like
-    %i.fas.fa-heart
-      %span いいね!!!！
-      %span = product.like_count
+
+
+-if @question.user.already_liked?(answer)
+  .liked
+    =link_to icon("fas", "crown"), question_answer_like_path(@question.id, answer.id, params[:id]), id: "crown",method:"DELETE"
+    -# = icon("fas", "crown")
+
+-elsif current_user == @question.user 
+  .like
+    = link_to icon("fas", "crown"), question_answer_likes_path(@question.id,answer.id), method:"POST", class: "like-btn"

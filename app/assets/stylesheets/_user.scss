@@ -1,5 +1,7 @@
 .account-page {
   .account-page__inner {
+    background-image: url("/images/login.jpg");
+    background-size: cover;
     width: 980px;
     margin: 60px auto;
     padding: 60px;
@@ -24,27 +26,31 @@
       letter-spacing: 3px;
       font-size: 40px;
       font-weight: 200;
+      font-family: Georgia, serif;
 
       &:after {
         content: '';
         display: block;
-        width: 60px;
+        width: 80px;
         margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
+        border-bottom: 1px solid #9ba901d7;
       }
     }
 
     h5 {
       margin-bottom: 20px;
       font-size: 14px;
-      font-weight: 200;
+      font-family: Georgia, serif;
+      font-weight: bold;
+      color: blue;
     }
 
     .btn {
       margin-top: 20px;
       color: #fff;
-      background-color: #ccc;
-      font-size: 14px;
+      font-family: Georgia, serif;
+      background-color: rgb(169, 168, 160);
+      font-size: 16px;
     }
   }
 
@@ -55,10 +61,12 @@
       padding: 10px 0;
       letter-spacing: 1px;
       font-size: 14px;
-      font-weight: 200;
+      font-family: Georgia, serif;
+      font-weight: bold;
 
       i {
         font-size: 11px;
+
       }
     }
 
@@ -86,7 +94,8 @@
     float: left;
     margin-top: 20px;
     color: #fff;
-    background-color: #38aef0;
+    font-family: Georgia, serif;
+    background-color: #788206d6;
   }
 
   .field-label {

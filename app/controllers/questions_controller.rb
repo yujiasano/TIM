@@ -21,6 +21,10 @@ class QuestionsController < ApplicationController
     @answers = @question.answers.includes(:user)
     @like = Like.new
   end
+
+  def search
+    @questions = Question.search(params[:keyword])
+  end
   
 
  private

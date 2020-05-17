@@ -5,7 +5,8 @@
 .main-contents
   :javascript
     window.onbeforeunload = function(e) {
-    e.returnValue = "ページを離れようとしています。よろしいですか？";
+      console.log("hello");
+      e.returnValue = "ページを離れようとしています。よろしいですか？";
     };
 
     
