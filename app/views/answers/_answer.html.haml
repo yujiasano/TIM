@@ -24,9 +24,10 @@
       -#       = link_to icon("fas", "crown"), question_answer_likes_path(@question.id,answer.id), method:"POST", class: "like-btn"
         
           
-      .main-contents__show--main.clearfix    
+      .main-contents__show--main.clearfix 
+         
         .main-contents__show--main--text
-          = answer.text
+          = text_url_to_link(h(answer.text)).html_safe
         .main-contents__show--main--image
           = image_tag answer.image     
         .main-contents__show--main--time
@@ -35,16 +36,16 @@
 -#   .main-contents__text
 -#     −−−−−−−−−−−−−   回答はまだありません   −−−−−−−−−−−−−
 
-
-.main-contents__question
-  = form_for [@question,@answer] do |f|
-    -# .main-contents__question--top 
-    -#   タイトル  
-    -# = f.text_field :title, class: "main-contents__question--title", placeholder: '　タイトルを入力してください'
-    .main-contents__question--main 
-      回答
-    = f.text_area :text, class: "main-contents__question--text", placeholder: '　回答を入力してください', value: ""
-    = f.label :image, class: "main-contents__question--image" do
-      = icon("fas", "image")
-      = f.file_field :image, class: "main-contents__question--image--file",value: ""
-    = f.submit "投稿", class: "main-contents__question--btn"
+-if user_signed_in?
+  .main-contents__question
+    = form_for [@question,@answer] do |f|
+      -# .main-contents__question--top 
+      -#   タイトル  
+      -# = f.text_field :title, class: "main-contents__question--title", placeholder: '　タイトルを入力してください'
+      .main-contents__question--main 
+        回答
+      = f.text_area :text, class: "main-contents__question--text", placeholder: '　回答を入力してください', value: ""
+      = f.label :image, class: "main-contents__question--image" do
+        = icon("fas", "image")
+        = f.file_field :image, class: "main-contents__question--image--file",value: ""
+      = f.submit "投稿", class: "main-contents__question--btn"
