@@ -27,7 +27,8 @@
       .main-contents__show--main.clearfix 
          
         .main-contents__show--main--text
-          = text_url_to_link(h(answer.text)).html_safe
+          = raw Rinku.auto_link(h(answer.text))
+          -# text_url_to_link(h(answer.text)).html_safe
         .main-contents__show--main--image
           = image_tag answer.image     
         .main-contents__show--main--time
