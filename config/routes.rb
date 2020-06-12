@@ -18,7 +18,7 @@ Rails.application.routes.draw do
   resources :cards, only: [:new, :create] do
   end
   
-  resources :items, only: [:index, :show] do
+  resources :items, only: [:index, :new, :show, :create] do
     resources :purchase, only: [:index] do
       collection do
         get 'index', to: 'purchase#index'

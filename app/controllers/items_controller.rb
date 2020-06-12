@@ -4,13 +4,18 @@ def index
 end
 
 def new
-  Item.new
+  @item = Item.new
 end
 
 def show
   @item = Item.find(params[:id])
 end
 
+def create
+  # binding.pry
+  @item = Item.create(item_params)
+  redirect_to root_path
+end
 
 # def pay
 #   # binding.pry
@@ -24,6 +29,10 @@ end
 # )
 # redirect_to action: 'done' #完了画面に移動
 # end
-
+private
+ def item_params
+  # binding.pry
+  params.require(:item).permit(:name, :price)
+ end
 
 end

@@ -1,0 +1,5 @@
+-if current_user.email == "yujiasano@yujiasano"
+  = form_for @item,url: {controller: 'items', action: 'create' } do |f|
+    = f.text_field :name, placeholder: '質問の名前'
+    = f.text_field :price, placeholder: '質問の値段'
+    = f.submit "決定"
