@@ -83,3 +83,6 @@ production:
   database: TIM_production
   username: TIM
   password: <%= ENV['TIM_DATABASE_PASSWORD'] %>
+  adapter: postgresql
+  encoding: unicode
+  # pool: 5
