@@ -22,6 +22,15 @@ class QuestionsController < ApplicationController
     @like = Like.new
   end
 
+  def destroy
+    question = Question.find(params[:id])
+    if  question.destroy
+      redirect_to root_path
+    else 
+      render :show
+    end
+  end
+
   def search
     @questions = Question.search(params[:keyword])
   end

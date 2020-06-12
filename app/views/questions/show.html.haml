@@ -9,6 +9,10 @@
         -#  link_to question.title, question_path(@questions.ids)
       .main-contents__show--info--name
         = @question.user.name
+      .destroy_btn
+        -if @question.user_id == current_user.id || current_user.email == "yujiasano@yujiasano"  
+          = icon("fas","trash-alt")    
+          = link_to "投稿を削除", question_path(@question.id), method: "DELETE", data: {confirm: "この作業は取り消せません。本当に削除しますか？"}
       -# .main-contents__show--info--like
       -#   = button_to "いいね", question_answers_path(@question.id)
     .main-contents__show--main.clearfix    
