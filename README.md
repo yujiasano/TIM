@@ -1,28 +1,29 @@
-<!-- # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+# TIM -time is money-
+  有料の質問サイトです。  
 
-Things you may want to cover:
 
-* Ruby version
+# Description
+  早く問題を解決したいと思った時に思いついたアプリです。  
+  質問者はお金を払って質問し、 一番早く問題を解決できた回答者はお金がもらえるというシステムです。  
+  質問者はお金を払うことで調べる手間と時間を削減でき、 回答者は早く質問に回答することでお金を稼ぐことができます。
+  
+  
+# DEMO
+[![Image from Gyazo](https://i.gyazo.com/5cdffe08306d7b4fc1da854348cfb128.jpg)](https://gyazo.com/5cdffe08306d7b4fc1da854348cfb128)
 
-* System dependencies
 
-* Configuration
+# APP URL
+https://tim-question-app.herokuapp.com/
 
-* Database creation
 
-* Database initialization
+# features
+- ユーザーの登録/ログイン機能
+- 質問の投稿、削除機能
+- クレジットカードでの決済機能
+- コメント機能
+- お気に入り機能
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ... -->
-# README
 
 ## usersテーブル
 
