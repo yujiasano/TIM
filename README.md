@@ -16,7 +16,9 @@
 # APP URL
 https://tim-question-app.herokuapp.com/
 
-
+テスト用アカウント  
+email : test@test  
+passw : testtest
 # features
 - ユーザーの登録/ログイン機能
 - 質問の投稿、削除機能
@@ -24,6 +26,13 @@ https://tim-question-app.herokuapp.com/
 - コメント機能
 - お気に入り機能
 
+# 使用技術
+Ruby/Ruby on Rails/JavaScript/jQuery/haml/sass/postgreSQL/Github  
+/heroku/Visual Studio Code
+
+# 工夫したポイント
+ユーザーが迷わないように、また、感覚的に操作してもらうため、  
+  各ページのビューをできるだけ分かりやすい表示にしました。
 
 ## usersテーブル
 
